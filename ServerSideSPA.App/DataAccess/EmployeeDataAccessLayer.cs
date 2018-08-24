@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ServerSideSPA.App.Models;
 using System;
 using System.Collections.Generic;
@@ -57,7 +57,8 @@ namespace ServerSideSPA.App.DataAccess
         {
             try
             {
-                Employee employee = db.Employee.Find(id);
+                var employee = db.Employee.Find(id);
+                db.Entry(employee).State = EntityState.Detached;
                 return employee;
             }
             catch
