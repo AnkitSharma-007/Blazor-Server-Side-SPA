@@ -16,7 +16,7 @@ namespace ServerSideSPA.App.DataAccess
         {
             try
             {
-                return db.Employee.ToList();
+                return db.Employee.AsNoTracking().ToList();
             }
             catch
             {
