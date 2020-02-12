@@ -34,25 +34,6 @@ namespace ServerSideSPA.Pages
             }
         }
 
-        protected async Task SaveEmployee()
-        {
-            if (emp.EmployeeId != 0)
-            {
-                await Task.Run(() =>
-                {
-                    EmployeeService.Edit(emp);
-                });
-            }
-            else
-            {
-                await Task.Run(() =>
-                {
-                    EmployeeService.Create(emp);
-                });
-            }
-            await GetEmployee();
-        }
-
         protected void DeleteConfirm(int empID)
         {
             emp = empList.FirstOrDefault(x => x.EmployeeId == empID);
