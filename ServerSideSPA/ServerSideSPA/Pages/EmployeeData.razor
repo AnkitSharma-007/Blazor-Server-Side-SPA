@@ -9,7 +9,7 @@
         <a href='/employee/add' class="btn btn-primary" role="button"><i class="fa fa-user-plus"></i> Add Employee</a>
     </div>
     <div class="input-group col-md-4 offset-md-4">
-        <input type="text" class="form-control" placeholder="Search employee by name" @bind="SearchString" />
+        <input type="text" class="form-control" placeholder="Search employee by name" @bind="SearchString" @bind:event="oninput"  @onkeyup="FilterEmp"/>
         <div class="input-group-append">
             <button class="btn btn-info" @onclick="FilterEmp">
                 <i class="fa fa-search"></i>

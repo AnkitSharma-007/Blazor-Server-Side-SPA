@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ServerSideSPA.Models
+﻿namespace ServerSideSPA.Models
 {
     public partial class Cities
     {

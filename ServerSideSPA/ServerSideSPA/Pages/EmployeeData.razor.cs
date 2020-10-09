@@ -13,6 +13,7 @@ namespace ServerSideSPA.Pages
         [Inject]
         protected EmployeeService EmployeeService { get; set; }
         protected List<Employee> empList = new List<Employee>();
+        protected List<Employee> searchEmpData = new List<Employee>();
         protected Employee emp = new Employee();
         protected string SearchString { get; set; }
         protected override async Task OnInitializedAsync()
@@ -23,14 +24,18 @@ namespace ServerSideSPA.Pages
         protected async Task GetEmployee()
         {
             empList = await EmployeeService.GetEmployeeList();
+            searchEmpData = empList;
         }
 
-        protected async Task FilterEmp()
+        protected void FilterEmp()
         {
-            await GetEmployee();
-            if (SearchString != "")
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                empList = empList.Where(x => x.Name.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1).ToList();
+                empList = searchEmpData.Where(x => x.Name.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1).ToList();
+            }
+            else
+            {
+                empList = searchEmpData;
             }
         }
 
