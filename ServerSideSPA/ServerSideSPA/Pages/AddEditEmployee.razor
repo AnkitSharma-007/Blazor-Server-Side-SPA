@@ -10,38 +10,38 @@
     <div class="form-group row">
         <label class="control-label col-md-12">Name</label>
         <div class="col-md-4">
-            <input class="form-control" @bind="emp.Name" />
+            <InputText class="form-control" @bind-Value="emp.Name" />
         </div>
         <ValidationMessage For="@(() => emp.Name)" />
     </div>
     <div class="form-group row">
         <label class="control-label col-md-12">Gender</label>
         <div class="col-md-4">
-            <select class="form-control" @bind="emp.Gender">
+            <InputSelect class="form-control" @bind-Value="emp.Gender">
                 <option value="">-- Select Gender --</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
-            </select>
+            </InputSelect>
         </div>
         <ValidationMessage For="@(() => emp.Gender)" />
     </div>
     <div class="form-group row">
         <label class="control-label col-md-12">Designation</label>
         <div class="col-md-4">
-            <input class="form-control" @bind="emp.Department" />
+            <InputText class="form-control" @bind-Value="emp.Department" />
         </div>
         <ValidationMessage For="@(() => emp.Department)" />
     </div>
     <div class="form-group row">
         <label class="control-label col-md-12">City</label>
         <div class="col-md-4">
-            <select class="form-control" @bind="emp.City">
+            <InputSelect class="form-control" @bind-Value="emp.City">
                 <option value="-- Select City --">-- Select City --</option>
                 @foreach (var city in cityList)
                 {
                     <option value="@city.CityName">@city.CityName</option>
                 }
-            </select>
+            </InputSelect>
         </div>
         <ValidationMessage For="@(() => emp.City)" />
     </div>
