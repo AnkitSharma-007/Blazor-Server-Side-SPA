@@ -7,7 +7,7 @@ We will use Visual Studio 2019 and SQL Server 2017.
 
 # Demo
 
-![Alt Text](https://github.com/AnkitSharma-007/Blazor-Server-Side-SPA/blob/master/Output/ServerSideSPA.gif)
+![Demo](https://github.com/AnkitSharma-007/Blazor-Server-Side-SPA/blob/master/Output/BlazorServerDemo.gif)
 
 
 # Read the full article at
