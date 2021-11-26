@@ -27,7 +27,7 @@ namespace ServerSideSPA
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddTransient<IEmployee, EmployeeDataAccessLayer>();
-            services.AddDbContext<myTestDBContext>(options => options.UseSqlServer(@"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=myTestDB;Data Source=ANKIT-LENOVO\SQLEXPRESS;"));
+            services.AddDbContext<myTestDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddScoped<EmployeeService>();
         }
 
