@@ -30,6 +30,12 @@ namespace ServerSideSPA.Models
                 entity.Property(e => e.CityName)
                     .HasMaxLength(20)
                     .IsUnicode(false);
+
+                entity.HasData(new City { CityId = 1, CityName = "Tokyo" });
+                entity.HasData(new City { CityId = 2, CityName = "Jakarta" });
+                entity.HasData(new City { CityId = 3, CityName = "Delhi" });
+                entity.HasData(new City { CityId = 4, CityName = "Manilla" });
+                entity.HasData(new City { CityId = 5, CityName = "Seoul" });
             });
 
             modelBuilder.Entity<Employee>(entity =>
